@@ -1,6 +1,7 @@
 import React from 'react'
 import { PhoneIcon, MapPinIcon, EnvelopeIcon } from "@heroicons/react/24/solid"
 import { useForm, SubmitHandler } from "react-hook-form";
+import { PageInfo } from '../typings';
 
 type Inputs = {
   name: string,
@@ -9,9 +10,11 @@ type Inputs = {
   message: string,
 };
 
-type Props = {}
+type Props = {
+  pageInfo: PageInfo;
+}
 
-function ContactMe({}: Props) {
+function ContactMe({ pageInfo }: Props) {
   const {
     register,
     handleSubmit,
@@ -30,22 +33,22 @@ function ContactMe({}: Props) {
       <div className="flex flex-col space-y-10">
         <h4 className="text-4xl font-semibold text-center">
           I have what you need.{" "}
-          <span className="decoration-[#F7AB0A]/50 underline">Let's Talk</span>
+          <span className=" decoration-[#F7AB0A]/50 underline `&apos;`">Let's Talk
+          </span>
         </h4>
         <div>
         <div className="flex items-center space-x-5 justify-center">
           <PhoneIcon className="text-[#F7AB0A] h-7 w-7 animate pulse"/>
-          <p className="text-2xl">91+ 7992472994</p>
+          <p className="text-2xl">                {pageInfo?.phoneNumber}</p>
         </div>
-
         <div className="flex items-center space-x-5 justify-center">
           <EnvelopeIcon className="text-[#F7AB0A] h-7 w-7 animate pulse"/>
-          <p className="text-2xl">raishaurya50@gmail.com</p>
+          <p className="text-2xl">                {pageInfo?.email}</p>
         </div>
 
         <div className="flex items-center space-x-5 justify-center">
           <MapPinIcon className="text-[#F7AB0A] h-7 w-7 animate pulse"/>
-          <p className="text-2xl">Patna, Anisabad, Saket Vihar, pin-code-800002</p>
+          <p className="text-2xl">                {pageInfo?.address}</p>
         </div>
       </div>
 

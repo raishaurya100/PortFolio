@@ -48,10 +48,6 @@ export default function Home({pageInfo, projects, skills, socials}: Props) {
       <section id="projects" className="snap-start">
         <Projects projects={projects}/>
       </section>
-
-      <section id="Contact" className="snap-start">
-        <ContactMe />
-      </section>
     </div>
   )
 }

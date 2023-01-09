@@ -5,7 +5,6 @@ import Hero from '../components/Hero'
 import About from '../components/About'
 import Skills from '../components/Skills'
 import Projects from '../components/Projects'
-import ContactMe from '../components/ContactMe'
 import { PageInfo, Project, Skill, Social } from "../typings"
 import type { GetStaticProps, NextPage } from "next";
 import { fetchProjects } from '../utils/fetchProject'
